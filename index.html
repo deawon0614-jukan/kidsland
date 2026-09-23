@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>백화점 8~9층 키즈랜드 (KIDS LAND) GRAND OPEN</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Noto Sans KR for body, Pacifico for Disney-style Disney logo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&family=Pacifico&family=Sniglet:wght@800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: {
+                            50: '#FAF7F2',
+                            100: '#F5EFE6',
+                            200: '#E8DEC9',
+                        },
+                        pastel: {
+                            pink: '#FFECEC',
+                            rose: '#FFBFA9',
+                            sky: '#E0F4FF',
+                            blue: '#38BDF8',
+                            yellow: '#FFEBB4',
+                            mint: '#D8F3DC',
+                            purple: '#E8D5C4'
+                        },
+                        disney: {
+                            navy: '#1A2B4C',
+                            gold: '#F59E0B',
+                            lightgold: '#FCD34D'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans KR', 'sans-serif'],
+                        logo: ['Pacifico', 'cursive'],
+                        accent: ['Sniglet', 'cursive']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for non-AI organic aesthetic */
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #FAF7F2;
+            color: #2D3748;
+            word-break: keep-all;
+        }
+
+        /* Disney Style Magic Logo Text Effect */
+        .disney-logo {
+            font-family: 'Pacifico', cursive;
+            background: linear-gradient(135deg, #FF6B8B 0%, #3B82F6 50%, #8B5CF6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(2px 3px 0px rgba(255, 235, 180, 0.8));
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .disney-logo:hover {
+            transform: scale(1.03) rotate(-1deg);
+            filter: drop-shadow(3px 5px 2px rgba(251, 191, 36, 0.9));
+        }
+
+        /* Soft Warm Glassmorphism */
+        .glass-header {
+            background: rgba(250, 247, 242, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+        }
+
+        /* Soft Rounded Shadow Cards */
+        .card-soft {
+            background: #FFFFFF;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px -5px rgba(210, 190, 170, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(240, 230, 220, 0.8);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        }
+
+        .card-soft:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 35px -8px rgba(180, 160, 140, 0.25);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FAF7F2;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94A3B8;
+        }
+
+        /* Wave Decoration */
+        .wave-bg {
+            background-image: radial-gradient(#38BDF8 0.75px, transparent 0.75px), radial-gradient(#38BDF8 0.75px, #FAF7F2 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            opacity: 0.15;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col selection:bg-pastel-rose selection:text-gray-900" id="top">
+
+    <!-- Sticky Header Navigation -->
+    <header class="sticky top-0 z-50 glass-header transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Disney Style Logo -->
+            <a href="#top" class="flex items-center gap-2 group focus:outline-none">
+                <span class="text-2xl sm:text-3xl font-extrabold disney-logo py-1">KIDS LAND</span>
+                <span class="inline-block text-amber-400 text-xs sm:text-sm animate-bounce"><i class="fa-solid font-900 fa-sparkles"></i>✨</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+                <a href="#about" class="px-3 py-2 text-sm lg:text-base font-semibold text-gray-700 hover:text-blue-600 rounded-full hover:bg-pastel-sky/50 transition-all">키즈랜드 소개</a>
+                <a href="#zones" class="px-3 py-2 text-sm lg:text-base font-semibold text-gray-700 hover:text-blue-600 rounded-full hover:bg-pastel-sky/50 transition-all">공간 안내</a>
+                <a href="#cardnews" class="px-3 py-2 text-sm lg:text-base font-semibold text-gray-700 hover:text-blue-600 rounded-full hover:bg-pastel-sky/50 transition-all">카드뉴스</a>
+                <a href="#shorts" class="px-3 py-2 text-sm lg:text-base font-semibold text-gray-700 hover:text-blue-600 rounded-full hover:bg-pastel-sky/50 transition-all">하이라이트 숏츠</a>
+                
+                <!-- Survey Button linked to ../01/web1.html -->
+                <a href="../01/web1.html" class="ml-2 px-4 py-2 text-sm lg:text-base font-bold text-white bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 rounded-full shadow-sm hover:shadow transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    <span>만족도 설문조사</span>
+                </a>
+            </nav>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl text-gray-700 hover:bg-gray-200/50 focus:outline-none" aria-label="메뉴 열기">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 border-b border-gray-200 px-4 pt-2 pb-6 shadow-lg">
+            <div class="flex flex-col gap-2">
+                <a href="#about" class="mobile-nav-link px-4 py-3 font-semibold text-gray-800 hover:bg-pastel-sky/40 rounded-xl">키즈랜드 소개</a>
+                <a href="#zones" class="mobile-nav-link px-4 py-3 font-semibold text-gray-800 hover:bg-pastel-sky/40 rounded-xl">공간 안내</a>
+                <a href="#cardnews" class="mobile-nav-link px-4 py-3 font-semibold text-gray-800 hover:bg-pastel-sky/40 rounded-xl">카드뉴스</a>
+                <a href="#shorts" class="mobile-nav-link px-4 py-3 font-semibold text-gray-800 hover:bg-pastel-sky/40 rounded-xl">하이라이트 숏츠</a>
+                <a href="../01/web1.html" class="mt-2 px-4 py-3 font-bold text-center text-white bg-amber-500 rounded-xl shadow">
+                    <i class="fa-solid fa-clipboard-list mr-2"></i>만족도 설문조사 참여하기
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden py-12 lg:py-20 bg-gradient-to-b from-cream-100 via-pastel-sky/20 to-cream-50">
+            <div class="absolute inset-0 wave-bg pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    
+                    <!-- Left Hero Content -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 border border-amber-300 text-amber-900 text-xs sm:text-sm font-bold shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-orange-500 animate-ping"></span>
+                            <span>백화점 8~9층 GRAND OPEN</span>
+                        </div>
+
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 leading-tight">
+                            엄마는 쇼핑을 즐기고,<br class="hidden sm:inline">
+                            <span class="relative inline-block text-blue-600">
+                                아이는 공간을 즐긴다!
+                                <span class="absolute bottom-1 left-0 w-full h-3 bg-pastel-yellow/60 -z-10 rounded"></span>
+                            </span>
+                        </h1>
+
+                        <p class="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                            타요, 포켓몬, 티니핑, 디즈니 4대 인기 캐릭터 IP 테마파크부터 부모님을 위한 프리미엄 뷰 카페 & 패밀리 푸드코트까지! 온 가족이 완벽하게 행복해지는 차세대 백화점 키즈랜드로 놀러오세요.
+                        </p>
+
+                        <!-- Key Features Pills -->
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 pt-2">
+                            <span class="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs sm:text-sm font-semibold text-gray-700 shadow-sm flex items-center gap-1.5">
+                                🏰 8F 인기 캐릭터 4대 IP
+                            </span>
+                            <span class="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs sm:text-sm font-semibold text-gray-700 shadow-sm flex items-center gap-1.5">
+                                🍽️ 9F 패밀리 푸드 & 뷰 카페
+                            </span>
+                            <span class="px-3 py-1.5 bg-white border border-gray-200 rounded-full text-xs sm:text-sm font-semibold text-gray-700 shadow-sm flex items-center gap-1.5">
+                                🎁 모바일 앱 쿠폰 혜택
+                            </span>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 pt-4">
+                            <a href="#zones" class="px-8 py-4 bg-sky-500 hover:bg-sky-600 text-white font-extrabold rounded-2xl shadow-lg hover:shadow-sky-200/80 transition-all text-center flex items-center justify-center gap-2">
+                                <span>공간 둘러보기</span>
+                                <i class="fa-solid fa-arrow-down-long"></i>
+                            </a>
+                            <a href="../01/web1.html" class="px-8 py-4 bg-white hover:bg-cream-100 text-gray-800 font-bold border border-gray-300 rounded-2xl shadow-sm transition-all text-center flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-comment-dots text-amber-500"></i>
+                                <span>설문조사 참여하기</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Hero Image Badge -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-full max-w-md">
+                            <div class="absolute -top-4 -left-4 w-24 h-24 bg-pastel-pink/70 rounded-full filter blur-xl opacity-70"></div>
+                            <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-pastel-sky/80 rounded-full filter blur-xl opacity-70"></div>
+                            
+                            <div class="card-soft overflow-hidden p-3 relative">
+                                <img src="공간 (5).jpg" alt="키즈랜드 중앙 광장 PLAY PLAZA" class="w-full h-80 object-cover rounded-xl" onerror="this.onerror=null; this.src='https://placehold.co/800x600/fecdd3/475569?text=PLAY+PLAZA';">
+                                <div class="p-4 text-center">
+                                    <span class="text-xs font-bold text-sky-600 bg-sky-50 px-2.5 py-1 rounded-md">8F Main Center</span>
+                                    <h3 class="font-bold text-lg text-gray-900 mt-1">PLAY PLAZA 대형 놀이 플랫폼</h3>
+                                    <p class="text-xs text-gray-500 mt-0.5">아이들이 마음껏 탐험하고 즐기는 초대형 중앙 광장</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section (#about) -->
+        <section id="about" class="py-16 sm:py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="text-sky-500 font-bold text-sm tracking-widest uppercase">VERTICAL LINK CONCEPT</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mt-2">8층 놀이공간과 9층 휴식공간의 수직적 연계</h2>
+                    <p class="text-gray-600 mt-3 text-sm sm:text-base leading-relaxed">
+                        8층에서 신나게 체험을 즐기고 토큰을 획득한 후, 9층 푸드코트와 뷰 카페에서 맛있는 식사와 휴식을 취하는 완벽한 동선을 제공합니다.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- 8F Card -->
+                    <div class="card-soft p-8 bg-gradient-to-br from-blue-50/50 to-sky-50/30 border-blue-100 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-blue-100/50 rounded-full -mr-10 -mt-10 pointer-events-none"></div>
+                        <div class="inline-block px-3 py-1 bg-blue-600 text-white font-extrabold text-xs rounded-lg mb-4">8F PLAY & EXPERIENCE</div>
+                        <h3 class="text-xl sm:text-2xl font-black text-gray-900 mb-3">인기 캐릭터 4대 IP 테마파크</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            타요, 포켓몬, 티니핑, 디즈니 단독 매장 및 게이미피케이션 미션 존! 아이들이 스스로 미션을 완주하고 한정판 스티커 굿즈를 수령할 수 있습니다.
+                        </p>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-gray-700 font-medium">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-sky-500"></i>
+                                <span>타요 무브 스테이션 (트랙 플레이 테스트)</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-sky-500"></i>
+                                <span>포켓몬 홈베이스 (단독 한정판 굿즈 & 룸)</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-sky-500"></i>
+                                <span>티니핑 & 디즈니 포토존 및 테마 체험관</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 9F Card -->
+                    <div class="card-soft p-8 bg-gradient-to-br from-amber-50/50 to-orange-50/30 border-amber-100 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-amber-100/50 rounded-full -mr-10 -mt-10 pointer-events-none"></div>
+                        <div class="inline-block px-3 py-1 bg-amber-500 text-white font-extrabold text-xs rounded-lg mb-4">9F EAT & REST</div>
+                        <h3 class="text-xl sm:text-2xl font-black text-gray-900 mb-3">패밀리 전용 프리미엄 식음 & 휴계 공간</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            아이 전용 식기, 유아 의자, 넓은 안심 동선이 완비된 푸드코트와 시원한 전망을 자랑하는 감성 뷰 카페에서 유익하고 여유로운 시간을 가져보세요.
+                        </p>
+                        <ul class="space-y-2.5 text-xs sm:text-sm text-gray-700 font-medium">
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-amber-500"></i>
+                                <span>패밀리 전용 넓은 가구 동선 & 키즈 전용 테이블</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-amber-500"></i>
+                                <span>글로벌 월드 퀴진 & 맞춤형 유아용 메뉴</span>
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fa-solid fa-circle-check text-amber-500"></i>
+                                <span>백화점 앱 회원 전원 9F 뷰 카페 1+1 쿠폰 제공</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Zones Section (#zones) -->
+        <section id="zones" class="py-16 sm:py-24 bg-cream-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="text-amber-600 font-bold text-sm tracking-widest uppercase">EXCLUSIVELY DESIGNED SPACES</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2">키즈랜드 주요 테마 공간 안내</h2>
+                    <p class="text-gray-600 mt-3 text-sm sm:text-base">
+                        아이들의 꿈과 상상력이 펼쳐지는 6가지 프리미엄 시그니처 테마 존을 소개합니다.
+                    </p>
+                </div>
+
+                <!-- Cards Grid for Zones -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Zone 1: 타요 존 -->
+                    <div class="card-soft overflow-hidden group">
+                        <div class="relative h-60 overflow-hidden bg-gray-100">
+                            <img src="공간 (3).png" alt="타요 무브 스테이션" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/800x600/bfdbfe/1e3a8a?text=Tayo+Move+Station';">
+                            <div class="absolute top-4 left-4 bg-blue-600 text-white font-extrabold text-xs px-3 py-1 rounded-full shadow">
+                                8F PLAY ZONE
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-bold text-xl text-gray-900">타요 무브 스테이션</h3>
+                                <span class="text-xs font-semibold px-2.5 py-1 bg-blue-50 text-blue-700 rounded-md">TAYO</span>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                역동적인 꼬마버스 타요 트랙 플레이 테스트 존! 스포츠웨어 착용 체험부터 직접 버스를 운전해보는 인터랙티브 트랙 미션을 수행합니다.
+                            </p>
+                            <div class="pt-3 border-t border-gray-100 flex items-center text-xs text-gray-500 gap-2">
+                                <i class="fa-solid fa-child text-blue-500"></i>
+                                <span>체험 요소: 트랙 달리질, 스포츠 웨어 피팅, 러닝 미션</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Zone 2: 포켓몬 존 -->
+                    <div class="card-soft overflow-hidden group">
+                        <div class="relative h-60 overflow-hidden bg-gray-100">
+                            <img src="공간 (4).png" alt="포켓몬 홈베이스" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/800x600/fef08a/854d0e?text=Pokemon+Home+Base';">
+                            <div class="absolute top-4 left-4 bg-amber-500 text-white font-extrabold text-xs px-3 py-1 rounded-full shadow">
+                                8F IP ZONE
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-bold text-xl text-gray-900">포켓몬 홈베이스</h3>
+                                <span class="text-xs font-semibold px-2.5 py-1 bg-amber-50 text-amber-700 rounded-md">POKEMON</span>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                피카츄와 잠만보가 함께하는 꿈꾸던 테마 침실 룸! 오직 키즈랜드 단독 한정판 굿즈와 도감 완성 미션을 만날 수 있습니다.
+                            </p>
+                            <div class="pt-3 border-t border-gray-100 flex items-center text-xs text-gray-500 gap-2">
+                                <i class="fa-solid fa-gift text-amber-500"></i>
+                                <span>체험 요소: 한정판 포켓몬 굿즈, 포토 테마룸, 스티커 미션</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Zone 3: 티니핑 & 디즈니 존 -->
+                    <div class="card-soft overflow-hidden group">
+                        <div class="relative h-60 overflow-hidden bg-gray-100">
+                            <img src="공간 (1).jpg" alt="티니핑 & 디즈니 존" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/800x600/fbcfe8/831843?text=Teenieping+and+Disney';">
+                            <div class="absolute top-4 left-4 bg-pink-500 text-white font-extrabold text-xs px-3 py-1 rounded-full shadow">
+                                8F FANTASY ZONE
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-bold text-xl text-gray-900">티니핑 & 디즈니 존</h3>
+                                <span class="text-xs font-semibold px-2.5 py-1 bg-pink-50 text-pink-700 rounded-md">FANTASY</span>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                캐치! 티니핑과 디즈니의 마법 같은 클래식 오리지널 스토리가 느껴지는 포토 파크! 귀여운 드레스 체험과 굿즈 쇼핑이 가능합니다.
+                            </p>
+                            <div class="pt-3 border-t border-gray-100 flex items-center text-xs text-gray-500 gap-2">
+                                <i class="fa-solid fa-wand-magic-sparkles text-pink-500"></i>
+                                <span>체험 요소: 캐릭터 라이프스탠드, 포토스팟, 공주 드레스룸</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Zone 4: 플레이스 (중앙 광장) -->
+                    <div class="card-soft overflow-hidden group">
+                        <div class="relative h-60 overflow-hidden bg-gray-100">
+                            <img src="공간 (5).jpg" alt="PLAY PLAZA 중앙 광장" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/800x600/ddd6fe/5b21b6?text=PLAY+PLAZA';">
+                            <div class="absolute top-4 left-4 bg-emerald-600 text-white font-extrabold text-xs px-3 py-1 rounded-full shadow">
+                                8F CENTRAL PLAZA
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="font-bold text-xl text-gray-900">PLAY PLAZA (플레이스)</h3>
+                                <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-md">PLAYLAND</span>
+                            </div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                8층의 중심에 위치한 대형 자율 놀이 놀이터! 아이들이 뛰어놀 수 있는 미끄럼틀, 클라이밍 파크와 휴게 벤치가 조성되어 있습니다.
+                            </p>
+                            <div class="pt-3 border-t border-gray-100 flex items-center text-xs text-gray-500 gap-2">
+                                <i class="fa-solid fa-shapes text-emerald-500"></i>
+                                <span>체험 요소: 로켓 미끄럼틀, 볼풀장, 안심 쿠션 플레이그라운드</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Zone 5: 패밀리 식당 / 푸드코트 -->
+                    <div class="card-soft overflow-hidden group lg:col-span-2">
+                        <div class="grid grid-cols-1 md:grid-cols-2 h-full">
+                            <div class="relative h-60 md:h-full overflow-hidden bg-gray-100">
+                                <img src="공간 (2).jpg" alt="패밀리 푸드코트 & 뷰 카페" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/800x600/fed7aa/7c2d12?text=Family+Food+Court';">
+                                <div class="absolute top-4 left-4 bg-orange-500 text-white font-extrabold text-xs px-3 py-1 rounded-full shadow">
+                                    9F DINING & CAFE
+                                </div>
+                            </div>
+                            <div class="p-6 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <h3 class="font-bold text-xl text-gray-900">패밀리 푸드코트 & 뷰 카페</h3>
+                                        <span class="text-xs font-semibold px-2.5 py-1 bg-orange-50 text-orange-700 rounded-md">EAT & REST</span>
+                                    </div>
+                                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                        모든 가구와 식기류가 아이들의 안전을 최고 우선으로 디자인된 프리미엄 다이닝 존! 미니 게임 플라자와 감성 뷰 카페가 한 층에 결합되어 온 가족이 편안한 여유를 즐깁니다.
+                                    </p>
+                                </div>
+                                <div>
+                                    <div class="grid grid-cols-2 gap-2 text-xs text-gray-600 mb-4 bg-orange-50/50 p-3 rounded-xl border border-orange-100">
+                                        <div>🍲 키즈 전용 소형 맞춤 식기 완비</div>
+                                        <div>🪑 넓은 유아 의자 동선 설계</div>
+                                        <div>☕ 탁 트인 백화점 라운지 뷰</div>
+                                        <div>🎮 미니 게임 플라자 연계</div>
+                                    </div>
+                                    <a href="../01/web1.html" class="inline-flex items-center gap-1.5 text-xs font-bold text-orange-600 hover:text-orange-700">
+                                        <span>식당가 만족도 평가 작성하기</span>
+                                        <i class="fa-solid fa-chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Card News Carousel Section (#cardnews) -->
+        <section id="cardnews" class="py-16 sm:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-pink-500 font-bold text-sm tracking-widest uppercase">INSTAGRAM CARD NEWS</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2">한눈에 보는 카드뉴스</h2>
+                    <p class="text-gray-600 mt-3 text-sm sm:text-base">
+                        슬라이드를 넘겨 키즈랜드 5대 주요 정보와 혜택을 확인해보세요.
+                    </p>
+                </div>
+
+                <!-- Carousel Wrapper -->
+                <div class="max-w-4xl mx-auto">
+                    <div class="relative bg-cream-50 p-4 sm:p-8 rounded-3xl border border-gray-200 shadow-xl">
+                        
+                        <!-- Main Card Display -->
+                        <div class="relative overflow-hidden rounded-2xl aspect-[4/5] sm:aspect-[16/9] bg-gray-900 shadow-inner">
+                            <div id="card-slider-container" class="w-full h-full flex transition-transform duration-500 ease-out">
+                                
+                                <!-- Slide 1 -->
+                                <div class="min-w-full h-full relative flex items-center justify-center bg-slate-900">
+                                    <img src="카드뉴스_01.png" alt="카드뉴스 1" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1e293b/ffffff?text=SLIDE+01+Grand+Open';">
+                                </div>
+
+                                <!-- Slide 2 -->
+                                <div class="min-w-full h-full relative flex items-center justify-center bg-slate-900">
+                                    <img src="카드뉴스_02.png" alt="카드뉴스 2" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1e293b/ffffff?text=SLIDE+02+Tayo+Station';">
+                                </div>
+
+                                <!-- Slide 3 -->
+                                <div class="min-w-full h-full relative flex items-center justify-center bg-slate-900">
+                                    <img src="카드뉴스_03.png" alt="카드뉴스 3" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1e293b/ffffff?text=SLIDE+03+Pokemon+Home';">
+                                </div>
+
+                                <!-- Slide 4 -->
+                                <div class="min-w-full h-full relative flex items-center justify-center bg-slate-900">
+                                    <img src="카드뉴스_04.png" alt="카드뉴스 4" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1e293b/ffffff?text=SLIDE+04+Family+Foodcourt';">
+                                </div>
+
+                                <!-- Slide 5 -->
+                                <div class="min-w-full h-full relative flex items-center justify-center bg-slate-900">
+                                    <img src="카드뉴스_05.png" alt="카드뉴스 5" class="w-full h-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/800x1000/1e293b/ffffff?text=SLIDE+05+View+Cafe+Coupon';">
+                                </div>
+
+                            </div>
+
+                            <!-- Carousel Controls -->
+                            <button id="prev-card-btn" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white text-gray-800 shadow-lg flex items-center justify-center transition-all focus:outline-none">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <button id="next-card-btn" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 hover:bg-white text-gray-800 shadow-lg flex items-center justify-center transition-all focus:outline-none">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+
+                            <!-- Slide Counter Indicator -->
+                            <div class="absolute bottom-4 right-4 bg-black/60 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full">
+                                <span id="current-slide-num">1</span> / 5
+                            </div>
+                        </div>
+
+                        <!-- Thumbnail Selector Navigation -->
+                        <div class="flex justify-center gap-2 mt-4 overflow-x-auto py-2" id="thumbnail-nav">
+                            <button class="thumb-btn border-2 border-sky-500 rounded-lg overflow-hidden w-14 h-14 flex-shrink-0 opacity-100 transition-all" data-index="0">
+                                <img src="카드뉴스_01.png" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100/1e293b/fff?text=1';">
+                            </button>
+                            <button class="thumb-btn border-2 border-transparent rounded-lg overflow-hidden w-14 h-14 flex-shrink-0 opacity-60 hover:opacity-100 transition-all" data-index="1">
+                                <img src="카드뉴스_02.png" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100/1e293b/fff?text=2';">
+                            </button>
+                            <button class="thumb-btn border-2 border-transparent rounded-lg overflow-hidden w-14 h-14 flex-shrink-0 opacity-60 hover:opacity-100 transition-all" data-index="2">
+                                <img src="카드뉴스_03.png" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100/1e293b/fff?text=3';">
+                            </button>
+                            <button class="thumb-btn border-2 border-transparent rounded-lg overflow-hidden w-14 h-14 flex-shrink-0 opacity-60 hover:opacity-100 transition-all" data-index="3">
+                                <img src="카드뉴스_04.png" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100/1e293b/fff?text=4';">
+                            </button>
+                            <button class="thumb-btn border-2 border-transparent rounded-lg overflow-hidden w-14 h-14 flex-shrink-0 opacity-60 hover:opacity-100 transition-all" data-index="4">
+                                <img src="카드뉴스_05.png" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/100/1e293b/fff?text=5';">
+                            </button>
+                        </div>
+
+                        <!-- Instagram Caption Style Callout Box -->
+                        <div class="mt-6 bg-white p-5 rounded-2xl border border-gray-200">
+                            <div class="flex items-center gap-3 pb-3 border-b border-gray-100 mb-3">
+                                <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-amber-400 to-pink-500 flex items-center justify-center text-white text-xs font-bold">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-sm text-gray-900">백화점 공식 인스타그램 캡션 가이드</h4>
+                                    <p class="text-xs text-gray-400">@dept_kidsland_official</p>
+                                </div>
+                            </div>
+                            <p class="text-xs sm:text-sm text-gray-700 leading-relaxed font-normal">
+                                <span class="font-bold text-gray-900">[NEW OPEN] 이번 주말, 아이 손잡고 어디 가세요? 🎈</span><br>
+                                엄마는 여유롭게 쇼핑하고, 아이는 신나게 미션을 수행하는 곳! 백화점 8~9층에 세상에 없던 '키즈랜드'가 오픈합니다. ✨<br><br>
+                                🎡 <strong>8F PLAY & EXPERIENCE ZONE:</strong> 포켓몬, 티니핑, 디즈니, 타요가 한곳에!<br>
+                                🍽️ <strong>9F EAT & REST ZONE:</strong> 뷰 카페 & 푸드코트 패밀리 좌석 완비!<br>
+                                🎁 <strong>OPEN EVENT:</strong> 지금 백화점 앱을 다운로드하고 [9층 뷰카페 1+1 쿠폰]과 [8층 미션북]을 받아가세요!
+                            </p>
+                            <div class="mt-3 pt-3 border-t border-gray-100 flex flex-wrap gap-1.5 text-xs text-sky-600 font-medium">
+                                <span>#키즈랜드</span> <span>#백화점키즈랜드</span> <span>#아이와가볼만한곳</span> <span>#타요</span> <span>#포켓몬</span> <span>#티니핑</span> <span>#디즈니</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Shorts Video Section (#shorts) -->
+        <section id="shorts" class="py-16 sm:py-24 bg-gradient-to-b from-cream-50 via-pastel-sky/30 to-cream-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <span class="text-purple-600 font-bold text-sm tracking-widest uppercase">VERTICAL SHORTS VIDEO</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mt-2">현장 감성 하이라이트 숏츠</h2>
+                    <p class="text-gray-600 mt-3 text-sm sm:text-base">
+                        아이와 엄마가 함께 키즈랜드를 탐험하는 생생한 모먼트를 영상으로 감상하세요!
+                    </p>
+                </div>
+
+                <!-- Smartphone Frame Vertical Video Container -->
+                <div class="flex justify-center">
+                    <div class="relative w-full max-w-[340px] sm:max-w-[360px] aspect-[9/16] bg-black rounded-[40px] p-3 shadow-2xl border-4 border-gray-800 ring-1 ring-gray-300 overflow-hidden">
+                        
+                        <!-- Phone Notch / Camera -->
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-5 bg-gray-800 rounded-b-2xl z-30 flex items-center justify-center">
+                            <div class="w-3 h-3 bg-black rounded-full mr-2"></div>
+                            <div class="w-10 h-1 bg-gray-700 rounded-full"></div>
+                        </div>
+
+                        <!-- Video Player Wrapper -->
+                        <div class="relative w-full h-full rounded-[30px] overflow-hidden bg-gray-900 group">
+                            
+                            <!-- Video Tag -->
+                            <video id="shorts-video" class="w-full h-full object-cover" autoplay loop muted playsinline poster="공간 (1).jpg">
+                                <source src="Mother_and_son_exploring_mall_20260921173057.mp4" type="video/mp4">
+                                <source src="video.mp4" type="video/mp4">
+                                죄송합니다. 브라우저가 동영상을 지원하지 않습니다.
+                            </video>
+
+                            <!-- Overlay Controls -->
+                            <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60 pointer-events-none"></div>
+
+                            <!-- Top Header Info -->
+                            <div class="absolute top-8 left-4 right-4 z-20 flex items-center justify-between text-white">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-8 h-8 rounded-full bg-amber-400 border border-white flex items-center justify-center font-bold text-gray-900 text-xs">
+                                        KL
+                                    </div>
+                                    <div>
+                                        <div class="text-xs font-bold leading-none">키즈랜드 탐험기</div>
+                                        <div class="text-[10px] text-gray-200 opacity-80">백화점 8-9F</div>
+                                    </div>
+                                </div>
+                                <span class="px-2 py-0.5 bg-red-500 text-white font-extrabold text-[10px] rounded-md animate-pulse">
+                                    LIVE SHORTS
+                                </span>
+                            </div>
+
+                            <!-- Floating Action Buttons Right Side -->
+                            <div class="absolute right-3 bottom-16 z-20 flex flex-col gap-4 text-white text-center">
+                                <button id="like-btn" class="flex flex-col items-center gap-1 focus:outline-none">
+                                    <div class="w-10 h-10 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center text-red-400 hover:scale-110 transition-transform">
+                                        <i class="fa-solid fa-heart text-lg"></i>
+                                    </div>
+                                    <span class="text-[10px] font-bold">2.4k</span>
+                                </button>
+                                
+                                <button id="mute-btn" class="flex flex-col items-center gap-1 focus:outline-none">
+                                    <div class="w-10 h-10 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                        <i id="mute-icon" class="fa-solid fa-volume-xmark text-lg"></i>
+                                    </div>
+                                    <span id="mute-text" class="text-[10px] font-bold">음소거</span>
+                                </button>
+
+                                <button id="play-pause-btn" class="flex flex-col items-center gap-1 focus:outline-none">
+                                    <div class="w-10 h-10 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center text-white hover:scale-110 transition-transform">
+                                        <i id="play-icon" class="fa-solid fa-pause text-lg"></i>
+                                    </div>
+                                    <span class="text-[10px] font-bold">재생/정지</span>
+                                </button>
+                            </div>
+
+                            <!-- Bottom Video Caption -->
+                            <div class="absolute bottom-4 left-4 right-16 z-20 text-white">
+                                <p class="text-xs font-medium leading-snug line-clamp-2">
+                                    엄마와 아이가 함께 떠나는 신나는 키즈랜드 공간 투어! 🎡✨
+                                </p>
+                                <p class="text-[10px] text-amber-300 font-bold mt-1">
+                                    #백화점키즈랜드 #8층PLAY #9층CAFEEAT
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Survey & Event CTA Banner Section -->
+        <section class="py-16 bg-gradient-to-r from-amber-500 via-orange-500 to-rose-500 text-white relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <span class="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-bold mb-3">
+                    소중한 의견을 기다립니다
+                </span>
+                <h2 class="text-2xl sm:text-4xl font-black mb-4">
+                    키즈랜드 오픈 만족도 설문조사에 참여해주세요!
+                </h2>
+                <p class="text-white/90 text-sm sm:text-base max-w-2xl mx-auto mb-8 font-normal">
+                    설문에 참여해주신 분들 중 추첨을 통해 9층 패밀리 푸드코트 할인 쿠폰 및 키즈랜드 한정판 스티커 미션북을 선물로 드립니다.
+                </p>
+                <a href="../01/web1.html" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-orange-600 font-extrabold rounded-2xl shadow-xl hover:bg-cream-50 transition-all transform hover:-translate-y-1 text-base">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <span>만족도 설문조사 바로가기</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-8">
+                
+                <div class="md:col-span-6 space-y-4">
+                    <div class="flex items-center gap-2">
+                        <span class="text-2xl font-extrabold disney-logo">KIDS LAND</span>
+                    </div>
+                    <p class="text-xs text-gray-400 leading-relaxed max-w-md">
+                        백화점 8~9층 신규 오픈 프리미엄 키즈랜드. 아이들의 꿈이 현실이 되는 테마파크와 온 가족을 위한 감성 휴식 공간을 제공합니다.
+                    </p>
+                    <div class="text-xs text-gray-400 space-y-1">
+                        <p>📍 위치: 백화점 8층(PLAY & EXPERIENCE) & 9층(EAT & REST)</p>
+                        <p>🗓️ Grand Open: 2026년 O월 O일 금요일</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-3 space-y-2 text-xs">
+                    <h4 class="text-sm font-bold text-white mb-3">빠른 메뉴</h4>
+                    <p><a href="#about" class="hover:text-white transition-colors">키즈랜드 소개</a></p>
+                    <p><a href="#zones" class="hover:text-white transition-colors">공간 안내</a></p>
+                    <p><a href="#cardnews" class="hover:text-white transition-colors">인스타그램 카드뉴스</a></p>
+                    <p><a href="#shorts" class="hover:text-white transition-colors">하이라이트 숏츠</a></p>
+                </div>
+
+                <div class="md:col-span-3 space-y-2 text-xs">
+                    <h4 class="text-sm font-bold text-white mb-3">고객 센터 & 참여</h4>
+                    <p>문의전화: 1588-0000</p>
+                    <p>운영시간: 10:30 ~ 20:00 (백화점 영업시간 동일)</p>
+                    <div class="pt-2">
+                        <a href="../01/web1.html" class="inline-block px-3 py-1.5 bg-amber-500/20 text-amber-300 rounded border border-amber-500/40 hover:bg-amber-500/30">
+                            설문조사 응답 페이지 (../01/web1.html)
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-gray-800 text-center text-[11px] text-gray-500">
+                <p>© 2026 Department Store KIDS LAND. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactivity JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // 1. Mobile Hamburger Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', function () {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                mobileNavLinks.forEach(link => {
+                    link.addEventListener('click', function () {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+
+            // 2. Card News Carousel Logic
+            const sliderContainer = document.getElementById('card-slider-container');
+            const prevBtn = document.getElementById('prev-card-btn');
+            const nextBtn = document.getElementById('next-card-btn');
+            const slideNumSpan = document.getElementById('current-slide-num');
+            const thumbBtns = document.querySelectorAll('.thumb-btn');
+            
+            let currentSlide = 0;
+            const totalSlides = 5;
+
+            function updateCarousel(index) {
+                currentSlide = (index + totalSlides) % totalSlides;
+                sliderContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+                if (slideNumSpan) slideNumSpan.textContent = currentSlide + 1;
+
+                // Update thumbnail highlight
+                thumbBtns.forEach((btn, idx) => {
+                    if (idx === currentSlide) {
+                        btn.classList.add('border-sky-500', 'opacity-100');
+                        btn.classList.remove('border-transparent', 'opacity-60');
+                    } else {
+                        btn.classList.remove('border-sky-500', 'opacity-100');
+                        btn.classList.add('border-transparent', 'opacity-60');
+                    }
+                });
+            }
+
+            if (prevBtn && nextBtn) {
+                prevBtn.addEventListener('click', () => updateCarousel(currentSlide - 1));
+                nextBtn.addEventListener('click', () => updateCarousel(currentSlide + 1));
+            }
+
+            thumbBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const idx = parseInt(this.getAttribute('data-index'), 10);
+                    updateCarousel(idx);
+                });
+            });
+
+            // 3. Shorts Video Player Controls
+            const shortsVideo = document.getElementById('shorts-video');
+            const muteBtn = document.getElementById('mute-btn');
+            const muteIcon = document.getElementById('mute-icon');
+            const muteText = document.getElementById('mute-text');
+            const playPauseBtn = document.getElementById('play-pause-btn');
+            const playIcon = document.getElementById('play-icon');
+            const likeBtn = document.getElementById('like-btn');
+
+            if (shortsVideo) {
+                // Mute toggle
+                if (muteBtn) {
+                    muteBtn.addEventListener('click', function () {
+                        shortsVideo.muted = !shortsVideo.muted;
+                        if (shortsVideo.muted) {
+                            muteIcon.className = 'fa-solid fa-volume-xmark text-lg';
+                            muteText.textContent = '음소거';
+                        } else {
+                            muteIcon.className = 'fa-solid fa-volume-high text-lg';
+                            muteText.textContent = '소리 켬';
+                        }
+                    });
+                }
+
+                // Play/Pause toggle
+                if (playPauseBtn) {
+                    playPauseBtn.addEventListener('click', function () {
+                        if (shortsVideo.paused) {
+                            shortsVideo.play();
+                            playIcon.className = 'fa-solid fa-pause text-lg';
+                        } else {
+                            shortsVideo.pause();
+                            playIcon.className = 'fa-solid fa-play text-lg';
+                        }
+                    });
+                }
+
+                // Like Button animation
+                if (likeBtn) {
+                    let isLiked = false;
+                    likeBtn.addEventListener('click', function () {
+                        isLiked = !isLiked;
+                        const heartIcon = likeBtn.querySelector('i');
+                        if (isLiked) {
+                            heartIcon.className = 'fa-solid fa-heart text-lg text-red-500 animate-bounce';
+                        } else {
+                            heartIcon.className = 'fa-solid fa-heart text-lg text-red-400';
+                        }
+                    });
+                }
+            }
+
+        });
+    </script>
+</body>
+</html>
